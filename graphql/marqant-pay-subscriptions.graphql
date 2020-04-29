@@ -27,3 +27,9 @@ extend type Query {
     plan(slug: String! @eq): Plan @find(model: "Marqant\\MarqantPaySubscriptions\\Models\\Plan") # @middleware(checks: ["auth:api"])
 }
 
+########################################################
+# Mutation
+extend type Mutation {
+    subscribeUser(email: String!, plan: String!): User
+}
+

@@ -24,6 +24,10 @@ class MarqantPaySubscriptionsGraphQLServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->setupGraphQLSchemaFiles();
+
+        $this->registerQueries();
+
+        $this->registerMutations();
     }
 
     /**
@@ -37,5 +41,31 @@ class MarqantPaySubscriptionsGraphQLServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../graphql/' => base_path('graphql'),
         ], 'marqant_pay_graphql');
+    }
+
+    /**
+     * Setup queries in the lighthouse configuration in boot method.
+     *
+     * @return void
+     */
+    public function registerQueries()
+    {
+        config([
+            'lighthouse.namespaces.queries' => array_merge((array) config('lighthouse.namespaces.queries'),
+                (array) 'Marqant\\MarqantPaySubscriptionsGraphQL\\GraphQL\\Queries'),
+        ]);
+    }
+
+    /**
+     * Setup mutations in the lighthouse configuration in boot method.
+     *
+     * @return void
+     */
+    public function registerMutations()
+    {
+        config([
+            'lighthouse.namespaces.mutations' => array_merge((array) config('lighthouse.namespaces.mutations'),
+                (array) 'Marqant\\MarqantPaySubscriptionsGraphQL\\GraphQL\\Mutations'),
+        ]);
     }
 }
