@@ -7,7 +7,25 @@
         {
             "name": "Thomas Venturini",
             "email": "thomas@du.digital"
+        },
+        {
+            "name": "Dmytro Sydorenko",
+            "email": "dmytro@du.digital"
         }
     ],
-    "require": {}
+    "require": {
+        "marqant-lab/marqant-pay-graphql": "~0.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marqant\\MarqantPaySubscriptionsGraphQL\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marqant\\MarqantPaySubscriptionsGraphQL\\MarqantPaySubscriptionsGraphQLServiceProvider"
+            ]
+        }
+    }
 }

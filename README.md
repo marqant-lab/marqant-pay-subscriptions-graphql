@@ -35,3 +35,8 @@ Or if you want to use the default schema of the vendor folder, then use the foll
 
 And that's it! You should be able to use marqant-pay and marqant-pay-subscriptions through graphql. Try it out using
  a client like [Insomnia](https://insomnia.rest) or [Altair](https://altair.sirmuel.design/).
+ 
+## Development
+
+Fot development, we suggest that you include the graphql files from the vendor folder, because they will be symlinked
+ into it when you are developing locally.
