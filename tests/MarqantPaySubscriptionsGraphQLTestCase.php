@@ -2,10 +2,8 @@
 
 namespace Marqant\MarqantPaySubscriptionsGraphQL\Tests;
 
-use Marqant\MarqantPay\Tests\MarqantPayTestCase;
-use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;
+use Marqant\MarqantPayGraphQL\Tests\MarqantPayGraphQLTestCase;
 
-abstract class MarqantPaySubscriptionsGraphQLTestCase extends MarqantPayTestCase
+abstract class MarqantPaySubscriptionsGraphQLTestCase extends MarqantPayGraphQLTestCase
 {
-    use MakesGraphQLRequests;
 }
