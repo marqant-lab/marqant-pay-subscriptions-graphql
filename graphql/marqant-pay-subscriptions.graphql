@@ -10,7 +10,7 @@ type Plan {
     updatedAt: DateTime @rename(attribute: "updated_at")
 }
 
-type Subscription {
+type SubscriptionItem {
     plan: Plan!
     last_charged: DateTime
     createdAt: DateTime! @rename(attribute: "created_at")
@@ -18,7 +18,7 @@ type Subscription {
 }
 
 extend type User {
-    subscriptions: [Subscription!]!
+    subscriptions: [SubscriptionItem!]!
 }
 
 ########################################################
