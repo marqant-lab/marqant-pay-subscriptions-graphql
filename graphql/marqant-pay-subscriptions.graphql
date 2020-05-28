@@ -10,6 +10,17 @@ type Plan {
     updatedAt: DateTime @rename(attribute: "updated_at")
 }
 
+type Subscription {
+    plan: Plan!
+    last_charged: DateTime
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime @rename(attribute: "updated_at")
+}
+
+extend type User {
+    subscriptions: [Subscription!]!
+}
+
 ########################################################
 # Inputs
 input PlanInput {
