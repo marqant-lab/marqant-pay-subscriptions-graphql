@@ -42,5 +42,6 @@ extend type Query {
 # Mutation
 extend type Mutation {
     subscribeUser(email: String!, plan: String!): User
+    unsubscribeUser(email: String!, plan: String!): User
 }
 
